@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: ms-loan
+  datasource:
+    url: jdbc:postgresql://localhost:5432/loan
+    username: postgres
+    password: local_2025!
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 8081
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+
+client:
+  ms-user:
+    url: http://localhost:8080
+
+feign:
+  okhttp:
+    enabled: true
